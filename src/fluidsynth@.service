@@ -1,0 +1,17 @@
+[Unit]
+Description=FluidSynth Daemon %I
+Documentation=man:fluidsynth(1)
+After=sound.target
+StopWhenUnneeded=true
+
+[Service]
+Type=notify
+NotifyAccess=main
+EnvironmentFile=/etc/default/fluidsynth
+EnvironmentFile=-%h/.config/fluidsynth
+ExecStartPre=/usr/bin/sleep 1s
+ExecStart=/usr/bin/fluidsynth -is -o audio.alsa.device="hw:%i,0" $OTHER_OPTS $SOUND_FONT
+
+[Install]
+WantedBy=multi-user.target
+

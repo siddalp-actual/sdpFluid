@@ -1,0 +1,6 @@
+ACTION=="change", SUBSYSTEM=="sound", ATTRS{idVendor}=="17c8", ATTRS{idProduct}=="f07f", ENV{PULSE_NAME}="SDP-3", TAG+="systemd", TAG+="ps", ENV{SYSTEMD_USER_WANTS}="fluidsynth@$number.service"
+#ACTION=="change", SUBSYSTEM=="sound", ATTRS{idVendor}=="17c8", ATTRS{idProduct}=="f07f", ENV{PULSE_NAME}="SDP-3", ENV{PULSE_MODARG}="fixed_latency_range=yes fragments=1 fragment_size=15", TAG+="systemd", TAG+="ps", ENV{SYSTEMD_USER_WANTS}="fluidsynth.service"
+#ACTION=="add", SUBSYSTEM=="usb", PROGRAM="/home/pi/bin/udev-test.sh", RUN+="/home/pi/udev-trigger.sh"
+#ACTION=="remove", SUBSYSTEM=="usb", ATTR{idVendor}=="17c8", ATTR{idProduct}=="f07f", TAG+="systemd"
+#ACTION=="remove", SUBSYSTEM=="usb", ATTR{idVendor}=="17c8", ATTR{idProduct}=="f07f", RUN+="/usr/bin/systemctl --user --no-block stop fluidsynth@$number.service"
+ACTION=="remove", SUBSYSTEM=="sound", ATTR{idVendor}=="17c8", ATTR{idProduct}=="f07f", RUN+="/usr/bin/systemctl --user --no-block stop fluidsynth@$number.service"
