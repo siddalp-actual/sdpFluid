@@ -10,7 +10,7 @@ NotifyAccess=main
 EnvironmentFile=/etc/default/fluidsynth
 EnvironmentFile=-%h/.config/fluidsynth
 ExecStartPre=/usr/bin/sleep 1s
-ExecStart=/usr/bin/fluidsynth -is -o audio.alsa.device="hw:%i,0" $OTHER_OPTS $SOUND_FONT
+ExecStart=/usr/bin/fluidsynth -is -o audio.pulseaudio.device="alsa_output.SDP-3.analog-stereo" $OTHER_OPTS $SOUND_FONT
 
 [Install]
 WantedBy=multi-user.target
