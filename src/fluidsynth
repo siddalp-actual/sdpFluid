@@ -1,7 +1,9 @@
 # Mandatory parameters (uncomment and edit)
-SOUND_FONT=/usr/share/sounds/sf3/default-GM.sf3  /home/pi/Music/MasonHamlin-A-v5.2.sf2
+SOUND_FONT=/usr/share/sounds/sf3/default-GM.sf3  /home/pi/Music/Fazioli-F308-v3.0.sf2
+#SOUND_FONT=/usr/share/sounds/sf3/default-GM.sf3  /home/pi/Music/MasonHamlin-A-v5.2.sf2
 #SOUND_FONT=/usr/share/sounds/sf3/default-GM.sf3  /home/pi/Music/Steinway.sf2
 
 # Additional optional parameters (may be useful, see 'man fluidsynth' for further info)
-OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000 -g 0.5 -o midi.autoconnect=1 -c 8 -o audio.realtime-prio=95 -o synth.cpu-cores=4 -o synth.chorus.active=0 -o shell.port=9998'
+OTHER_OPTS='-f /home/pi/Music/sdpSetup -a pulseaudio -m alsa_seq -r 48000 -g 0.5 -o midi.autoconnect=1 -c 8 -o audio.realtime-prio=95 -o synth.cpu-cores=4 -o synth.chorus.active=0 -o shell.port=9998'
+#OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000 -g 0.5 -o midi.autoconnect=1 -c 8 -o audio.realtime-prio=95 -o synth.cpu-cores=4 -o synth.chorus.active=0 -o shell.port=9998'
 #OTHER_OPTS='-a alsa -m alsa_seq -r 48000 -g 0.5 -o midi.autoconnect=1 -c 8 -o audio.realtime-prio=95 -o synth.cpu-cores=4 -o synth.chorus.active=0 -o shell.port=9998'
