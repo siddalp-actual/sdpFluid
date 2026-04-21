@@ -5,9 +5,9 @@ After=sound.target
 StopWhenUnneeded=true
 
 [Service]
-#Type=notify
+Type=notify
 # this change from notify worked !
-Type=exec
+#Type=exec
 # allow 5 mins to load the huge samples NB TimeoutStartSec not recognised, hmm maybe lack of 's'?
 TimeoutSec=300s
 NotifyAccess=main
